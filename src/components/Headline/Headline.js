@@ -13,11 +13,7 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
   makeStyles(theme => ({
     headlineRoot: {
       backgroundColor: backgColor || 'transparent',
-      backgroundImage: backgImage?.name
-        ? backgImage.raw
-          ? `url("${backgImage.raw}")`
-          : `url("${backgImage.fixed.src}")`
-        : 'none',
+      backgroundImage: backgImage?.name ? `url("${backgImage.publicURL}")` : 'none',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -133,9 +129,9 @@ export default function Headline({
     variant: 'outlined',
   };
 
-  // console.group('Headline.js');
-  // console.log({ backgImage });
-  // console.groupEnd();
+  console.group('Headline.js');
+  console.log({ backgImage });
+  console.groupEnd();
 
   return (
     <Box className={classes.headlineRoot} style={style}>
