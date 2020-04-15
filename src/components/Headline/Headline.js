@@ -61,8 +61,11 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
         flex: `0 0 ${100 / 2}%`,
       },
     },
-    headlineTitle: {},
+    headlineTitle: {
+      ...docTheme.typography.h1,
+    },
     headlineSubtitle: {
+      ...docTheme.typography.h3,
       marginTop: theme.spacing(1),
       [theme.breakpoints.up('md')]: {
         marginTop: theme.spacing(3),
@@ -72,6 +75,7 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
       },
     },
     headlineText: {
+      ...docTheme.typography.h5,
       marginTop: theme.spacing(1),
       [theme.breakpoints.up('md')]: {
         marginTop: theme.spacing(3),
