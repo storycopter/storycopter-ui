@@ -15,8 +15,11 @@ const SLIDER_PADDING = 80;
 
 const useStyles = (maskColor, textColor) =>
   makeStyles(theme => ({
-    imageRoot: {},
+    imageRoot: {
+      width: '100%',
+    },
     imageChild: {
+      width: '100%',
       '&:before': {
         webkitFilter: 'blur(5px)',
         filter: 'blur(5px)',
@@ -31,7 +34,7 @@ const useStyles = (maskColor, textColor) =>
       color: textColor || 'inherit',
       display: 'block',
       position: 'relative',
-      width: '100vw',
+      width: '100%',
     },
     imageImg: {
       overflow: 'hidden',

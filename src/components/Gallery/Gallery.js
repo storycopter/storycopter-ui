@@ -7,17 +7,9 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 
 import Image from './Image';
 
-const useStyles = fullSize =>
-  makeStyles(theme => ({
-    galleryRoot: {
-      minHeight: fullSize ? '100vh' : 'auto',
-    },
-    slide: {
-      position: 'relative',
-    },
-  }));
+const useStyles = fullSize => makeStyles(theme => ({}));
 
-export default function Gallery({ backgColor, images, fullSize, maskColor, textColor }) {
+export default function Gallery({ fullSize, images, maskColor, textColor }) {
   const classes = useStyles(fullSize)();
   const sliderRef = useRef();
 
