@@ -42,5 +42,17 @@ export default createMuiTheme({
       ...setType(400),
       fontWeight: 'normal',
     },
+    body1: {
+      ...setType(400),
+      fontWeight: 'normal',
+    },
+    body2: {
+      ...setType(300),
+      fontWeight: 'normal',
+    },
+    caption: {
+      ...setType(200),
+      fontWeight: 'normal',
+    },
   },
 });

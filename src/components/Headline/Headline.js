@@ -7,8 +7,6 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
-import docTheme from '../../themes/docTheme';
-
 const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor) =>
   makeStyles(theme => ({
     headlineRoot: {
@@ -62,10 +60,10 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
       },
     },
     headlineTitle: {
-      ...docTheme.typography.h1,
+      ...theme.typography.h1,
     },
     headlineSubtitle: {
-      ...docTheme.typography.h3,
+      ...theme.typography.h3,
       marginTop: theme.spacing(1),
       [theme.breakpoints.up('md')]: {
         marginTop: theme.spacing(3),
@@ -75,7 +73,7 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
       },
     },
     headlineText: {
-      ...docTheme.typography.h5,
+      ...theme.typography.h5,
       marginTop: theme.spacing(1),
       [theme.breakpoints.up('md')]: {
         marginTop: theme.spacing(3),
@@ -85,13 +83,13 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
       },
     },
     headlineTitleInput: {
-      ...docTheme.typography.h1,
+      ...theme.typography.h1,
     },
     headlineSubtitleInput: {
-      ...docTheme.typography.h3,
+      ...theme.typography.h3,
     },
     headlineTextInput: {
-      ...docTheme.typography.h5,
+      ...theme.typography.h5,
     },
     headlineActionbar: {
       marginTop: theme.spacing(5),
@@ -133,9 +131,9 @@ export default function Headline({
     variant: 'outlined',
   };
 
-  console.group('Headline.js');
-  console.log({ backgImage });
-  console.groupEnd();
+  // console.group('Headline.js');
+  // console.log({ backgImage });
+  // console.groupEnd();
 
   return (
     <Box className={classes.headlineRoot} style={style}>

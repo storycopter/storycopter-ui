@@ -1,115 +1,74 @@
-import React, { Component } from 'react';
+import './react-slick.css';
+import React, { useRef, useState } from 'react';
 import Slider from 'react-slick';
-import styled from 'styled-components';
-import { array, string } from 'prop-types';
-import { sortBy } from 'lodash';
+import sortBy from 'lodash/sortBy';
+
+import makeStyles from '@material-ui/core/styles/makeStyles';
 
 import Image from './Image';
 
-import './react-slick.css';
+const useStyles = fullSize =>
+  makeStyles(theme => ({
+    galleryRoot: {
+      minHeight: fullSize ? '100vh' : 'auto',
+    },
+    slide: {
+      position: 'relative',
+    },
+  }));
 
-const Slide = styled(({ cover, ...props }) => <figure {...props} />)`
-  position: relative;
-  ${({ cover }) => {
-    if (cover) {
-      return `
-        min-height: 100vh;
-        min-width: 100vw;
-        .gatsby-image-wrapper {
-          height: 100vh !important;
-          width: 100vw !important;
-          line-height: 0;
-        }
-      `;
-    } else {
-      return `
-        .non-gatsby-image,
-        .gatsby-image-wrapper {
-          max-height: 100vh !important;
-          width: 100% !important;
-        }
-      `;
-    }
-  }};
-`;
+export default function Gallery({ backgColor, images, fullSize, maskColor, textColor }) {
+  const classes = useStyles(fullSize)();
+  const sliderRef = useRef();
 
-const Element = styled(({ ...props }) => <div {...props} />)``;
+  const [slideNo, setSlideNo] = useState(null);
 
-class Gallery extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { edit: null };
-  }
-
-  enterEditMode = node => {
-    this.setState({ edit: node });
+  const sliderSettings = {
+    adaptiveHeight: false,
+    arrows: false,
+    dots: false,
+    fade: true,
+    slidesToShow: 1,
+    variableWidth: false,
   };
 
-  nextSlide = () => {
-    this.slider.slickNext();
-  };
-  prevSlide = () => {
-    this.slider.slickPrev();
-  };
+  // console.group('Gallery.js');
+  // console.log({ images });
+  // console.log(images.length);
+  // console.groupEnd();
 
-  render() {
-    const { cover, images, mask } = this.props;
-
-    // console.group('Gallery.js');
-    // console.log(this.props);
-    // console.groupEnd();
-
-    const settings = {
-      adaptiveHeight: false,
-      arrows: false,
-      dots: false,
-      slidesToShow: 1,
-      variableWidth: false,
-    };
-
-    return (
-      <Element>
-        <Slider ref={c => (this.slider = c)} {...settings}>
-          {images.length > 1 ? (
-            sortBy(images, [o => o.order]).map((image, i) => {
-              const imageProps = {
-                alt: image.alt,
-                caption: image.caption,
-                fixed: image.fixed,
-                images: images,
-                mask: mask,
-                onNextImage: this.nextSlide,
-                onPrevImage: this.prevSlide,
-                raw: image.raw,
-              };
-              return (
-                <Slide cover={cover} key={i}>
-                  <Image {...imageProps} i={i}></Image>
-                </Slide>
-              );
-            })
-          ) : (
-            <Image
-              alt={images[0].alt}
-              caption={images[0].caption}
-              fixed={images[0].fixed}
-              images={images}
-              mask={mask}
-              raw={images[0].raw}
-            />
-          )}
-        </Slider>
-      </Element>
-    );
-  }
+  return (
+    <div className={classes.galleryRoot}>
+      <Slider {...sliderSettings} ref={sliderRef} beforeChange={(oNo, nNo) => setSlideNo(nNo)}>
+        {images.length > 1 ? (
+          sortBy(images, [o => o.order]).map((image, i) => {
+            const settings = {
+              fullSize,
+              image: {
+                ...image,
+                order: i + 1,
+              },
+              maskColor,
+              textColor,
+            };
+            return (
+              <Image
+                count={images.length}
+                key={image.order}
+                onCallNext={() => sliderRef.current.slickNext()}
+                onCallPrev={() => sliderRef.current.slickPrev()}
+                settings={settings}
+                slideNo={slideNo}
+                sliderRef={sliderRef}
+              />
+            );
+          })
+        ) : (
+          <Image {...images[0]} settings={{ image: images[0], fullSize, maskColor, textColor }} />
+        )}
+      </Slider>
+    </div>
+  );
 }
 
-export default Gallery;
-
-Gallery.propTypes = {
-  images: array.isRequired,
-  mask: string,
-};
-Gallery.defaultProps = {
-  mask: null,
-};
+Gallery.propTypes = {};

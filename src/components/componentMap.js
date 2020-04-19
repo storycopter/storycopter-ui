@@ -1,8 +1,7 @@
-import { Headline, Gallery } from '.';
+import Headline from './Headline/Headline';
+import Gallery from './Gallery/Gallery';
 
-const componentMap = {
+export default {
   headline: Headline,
   gallery: Gallery,
 };
-
-export default componentMap;

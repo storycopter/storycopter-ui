@@ -1,129 +1,160 @@
+import BackgroundImage from 'gatsby-background-image';
 import Img from 'gatsby-image';
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { array, func, object, string } from 'prop-types';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import IconButton from '@material-ui/core/IconButton';
-import { withStyles } from '@material-ui/styles';
-import { withTheme } from '@material-ui/styles';
+import Typography from '@material-ui/core/Typography';
+import makeStyles from '@material-ui/core/styles/makeStyles';
 
-import { breakpoint, color } from '../../settings';
-import { setType, setSpace } from '../../mixins';
+import setSpace from '../../themes/mixins/setSpace';
 
-const CaptionCount = styled(({ ...props }) => <span {...props} />)`
-  ${setType('x')};
-  display: block;
-`;
-const CaptionText = styled(({ ...props }) => <span {...props} />)`
-  ${setType('x')};
-  display: block;
-`;
-const Caption = styled(({ theme, ...props }) => <figcaption {...props} />)`
-  ${setSpace('pal')};
-  bottom: 0;
-  color: ${({ theme }) => theme.palette.text.primary};
-  left: 0;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  z-index: 2;
-  ${breakpoint.phone} {
-    ${setSpace('pam')};
-    ${setSpace('max')};
-  }
-`;
-const Element = styled(({ mask, ...props }) => <div {...props} />)`
-  position: relative;
-  ${({ mask }) => {
-    if (mask) {
-      return `
-      &:before {
-        background: ${mask === 'dark' ? color.shadow[500] : color.flare[500]};
-        bottom: 0;
-        content: " ";
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 1;
-      }
-        `;
-    }
-  }};
-`;
+const SLIDER_PADDING = 80;
 
-const styles = {
-  SliderArrows: {
-    background: 'transparent',
-    margin: '0 5px',
-    '&:hover': {
-      background: 'transparent',
+const useStyles = (maskColor, textColor) =>
+  makeStyles(theme => ({
+    imageRoot: {},
+    imageChild: {
+      '&:before': {
+        webkitFilter: 'blur(5px)',
+        filter: 'blur(5px)',
+      },
+      '&:after': {
+        webkitFilter: 'blur(5px)',
+        filter: 'blur(5px)',
+      },
     },
-  },
-};
+    imageFigure: {
+      backgroundColor: maskColor || 'transparent',
+      color: textColor || 'inherit',
+      display: 'block',
+      position: 'relative',
+      width: '100vw',
+    },
+    imageImg: {
+      overflow: 'hidden',
+      padding: `${SLIDER_PADDING}px`,
+    },
+    imageCaption: {
+      bottom: 0,
+      display: 'block',
+      left: 0,
+      marginBottom: '20px',
+      position: 'absolute',
+      right: '0',
+      textAlign: 'center',
+      zIndex: '50',
+    },
+    imageCount: {
+      alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    imageArrow: {
+      ...setSpace('mh200'),
+      '&:hover': {
+        background: 'transparent',
+      },
+    },
+  }));
 
-class Image extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { edit: null };
-  }
+export default function Image({
+  count,
+  maxHeight,
+  onCallNext,
+  onCallPrev,
+  sliderRef,
+  slideNo,
+  settings: { fullSize = null, image = null, maskColor = null, textColor = null },
+  ...props
+}) {
+  const classes = useStyles(maskColor, textColor)();
 
-  enterEditMode = node => {
-    this.setState({ edit: node });
+  const { innerHeight, innerWidth } = window;
+  const { fluid, fixed } = image.childImageSharp;
+
+  const [dimensions, setDimensions] = useState(null);
+
+  const getDimensions = () => {
+    var wh = window.innerHeight;
+    var ww = window.innerWidth;
+
+    const { aspectRatio } = fluid;
+
+    if (aspectRatio > 1) {
+      const h = (wh / ww) * aspectRatio;
+      const w = ww;
+      setDimensions({ h, w });
+    } else if (aspectRatio < 1) {
+      const h = wh;
+      const w = ww * ((wh / ww) * aspectRatio);
+      setDimensions({ h: h, w: w + SLIDER_PADDING });
+    } else {
+      const d = wh > wh ? wh : ww;
+      setDimensions({ h: d, w: d });
+    }
   };
 
-  render() {
-    const { alt, caption, classes, fixed, i, images, mask, onNextImage, onPrevImage, raw, theme } = this.props;
+  useEffect(() => {
+    getDimensions();
+  }, []);
 
-    // console.group('Image.js');
-    // console.log(this.props);
-    // console.groupEnd();
+  useEffect(() => {
+    getDimensions();
+  }, [slideNo]);
 
-    return (
-      <Element mask={mask}>
-        {raw ? (
-          <img className="non-gatsby-image" alt={alt} src={raw} />
-        ) : (
-          <Img alt={alt} fixed={fixed} cropFocus="cover" />
-        )}
-        <Caption theme={theme}>
-          {images.length > 1 ? (
-            <CaptionCount>
-              <IconButton className={classes.SliderArrows} color="inherit" onClick={onPrevImage} size="small">
-                <ArrowBackIcon fontSize="inherit" />
-              </IconButton>{' '}
-              {i < 10 ? `0${i + 1}` : i + 1} / {images.length < 10 ? `0${images.length}` : images.length}{' '}
-              <IconButton className={classes.SliderArrows} color="inherit" onClick={onNextImage} size="small">
-                <ArrowForwardIcon fontSize="inherit" />
-              </IconButton>
-            </CaptionCount>
-          ) : null}
-          <CaptionText>{caption}</CaptionText>
-        </Caption>
-      </Element>
-    );
-  }
+  useEffect(() => {
+    window.addEventListener('resize', getDimensions);
+    return () => window.removeEventListener('resize', getDimensions);
+  });
+
+  // console.group('Image.js');
+  // console.log('image:', image);
+  // console.groupEnd();
+
+  return (
+    <BackgroundImage fluid={fluid} className={classes.imageRoot} {...props}>
+      <BackgroundImage fluid={fluid} className={classes.imageChild}>
+        <figure className={classes.imageFigure}>
+          <div
+            className={classes.imageImg}
+            style={{
+              minHeight: fullSize ? `${window.innerHeight}px` : 'auto',
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Img
+              fluid={fluid}
+              style={{
+                height: fullSize ? `${dimensions?.h - SLIDER_PADDING * 2}px` : 'auto',
+                width: fullSize ? `${dimensions?.w - SLIDER_PADDING * 2}px` : 'auto',
+              }}
+            />
+          </div>
+          <figcaption className={classes.imageCaption}>
+            {count > 1 ? (
+              <Typography className={classes.imageCount} variant="caption" component="div">
+                <IconButton className={classes.imageArrow} color="inherit" onClick={onCallPrev} size="small">
+                  <ArrowBackIcon fontSize="inherit" />
+                </IconButton>
+                {image.order < 10 ? `0${image.order}` : image.order} / {count < 10 ? `0${count}` : count}
+                <IconButton className={classes.imageArrow} color="inherit" onClick={onCallNext} size="small">
+                  <ArrowForwardIcon fontSize="inherit" />
+                </IconButton>
+              </Typography>
+            ) : null}
+            <Typography noWrap variant="body1">
+              {image.caption}
+            </Typography>
+          </figcaption>
+        </figure>
+      </BackgroundImage>
+    </BackgroundImage>
+  );
 }
 
-export default withTheme(withStyles(styles)(Image));
-
-Image.propTypes = {
-  alt: string.isRequired,
-  caption: string,
-  fixed: object,
-  images: array.isRequired,
-  mask: string,
-  onNextImage: func,
-  onPrevImage: func,
-  raw: string,
-  theme: object,
-};
-Image.defaultProps = {
-  caption: ' ',
-  mask: null,
-  onNextImage: null,
-  onPrevImage: null,
-  raw: null,
-};
+Image.propTypes = {};
