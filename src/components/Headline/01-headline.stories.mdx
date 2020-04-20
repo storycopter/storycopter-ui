@@ -41,7 +41,7 @@ export const onHeadlineUpdate = (payload) => {
 <Preview>
   <Story name="w/ text color">
     <Headline
-      textColor="red"
+      textColor="#e6b655"
       subtitle="A subtitle belonging to the Headline. Such item can contain lenghty text."
       text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
       title="A title of the Headline"
@@ -52,7 +52,7 @@ export const onHeadlineUpdate = (payload) => {
 <Preview>
   <Story name="w/ background color">
     <Headline
-      backgColor="cyan"
+      backgColor="#e6b655"
       subtitle="A subtitle belonging to the Headline. Such item can contain lenghty text."
       text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
       title="A title of the Headline"
@@ -63,16 +63,7 @@ export const onHeadlineUpdate = (payload) => {
 <Preview>
   <Story name="w/ background image">
     <Headline
-      backgImage={{
-        name: "sample.jpg",
-        fixed: {
-          base64: "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAeABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBBAUG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAED/9oADAMBAAIQAxAAAAHchBWFDm2zhnfKIf/EABoQAAIDAQEAAAAAAAAAAAAAAAABAgQREAP/2gAIAQEAAQUC7pporEkl7yQ7DZvf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFRABAQAAAAAAAAAAAAAAAAAAIDH/2gAIAQEABj8CdP8A/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERIDFxgf/aAAgBAQABPyHISlrEztejK1mw3GdP/9oADAMBAAIAAwAAABBrJoL/xAAXEQADAQAAAAAAAAAAAAAAAAAAEBEh/9oACAEDAQE/EKU1f//EABYRAAMAAAAAAAAAAAAAAAAAAAAQIf/aAAgBAgEBPxBw/8QAHRABAAICAgMAAAAAAAAAAAAAAQARIVEQMUFhcf/aAAgBAQABPxDEa4puV2SuyXu7mlyxAT17EwhfGCEUairWGdhbNeCf/9k=",
-          height: 900,
-          src: "sample.jpg",
-          srcSet: "sample.jpg 1x,sample.jpg 1.5x,sample.jpg 2x",
-          width: 1400
-        },
-      }}
+      backgImage={{"name":"image-h.png","base":"image-h.png","childImageSharp":{"resize":{"originalName":"image-h.png","src":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/5c63f/image-h.png"},"fluid":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","aspectRatio":1.775,"src":"/image-h.png","srcSet":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/4a076/image-h.png 355w,\n/static/750dc0c9885bfd9d4f95b95e9d134d4c/62657/image-h.png 710w,\n/image-h.png 1420w,\n/image-h.png 1920w","sizes":"(max-width: 1420px) 100vw, 1420px"},"fixed":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","width":1420,"height":800,"src":"/image-h.png","srcSet":"/image-h.png 1x"}},"publicURL":"/image-h.png"}}
       subtitle="A subtitle belonging to the Headline. Such item can contain lenghty text."
       text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
       title="A title of the Headline"
@@ -94,16 +85,7 @@ export const onHeadlineUpdate = (payload) => {
 <Preview>
   <Story name="w/ mask">
     <Headline
-      backgImage={{
-        name: "sample.jpg",
-        fixed: {
-          base64: "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAeABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBBAUG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAED/9oADAMBAAIQAxAAAAHchBWFDm2zhnfKIf/EABoQAAIDAQEAAAAAAAAAAAAAAAABAgQREAP/2gAIAQEAAQUC7pporEkl7yQ7DZvf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFRABAQAAAAAAAAAAAAAAAAAAIDH/2gAIAQEABj8CdP8A/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERIDFxgf/aAAgBAQABPyHISlrEztejK1mw3GdP/9oADAMBAAIAAwAAABBrJoL/xAAXEQADAQAAAAAAAAAAAAAAAAAAEBEh/9oACAEDAQE/EKU1f//EABYRAAMAAAAAAAAAAAAAAAAAAAAQIf/aAAgBAgEBPxBw/8QAHRABAAICAgMAAAAAAAAAAAAAAQARIVEQMUFhcf/aAAgBAQABPxDEa4puV2SuyXu7mlyxAT17EwhfGCEUairWGdhbNeCf/9k=",
-          height: 900,
-          src: "sample.jpg",
-          srcSet: "sample.jpg 1x,sample.jpg 1.5x,sample.jpg 2x",
-          width: 1400
-        },
-      }}
+      backgImage={{"name":"image-h.png","base":"image-h.png","childImageSharp":{"resize":{"originalName":"image-h.png","src":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/5c63f/image-h.png"},"fluid":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","aspectRatio":1.775,"src":"/image-h.png","srcSet":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/4a076/image-h.png 355w,\n/static/750dc0c9885bfd9d4f95b95e9d134d4c/62657/image-h.png 710w,\n/image-h.png 1420w,\n/image-h.png 1920w","sizes":"(max-width: 1420px) 100vw, 1420px"},"fixed":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","width":1420,"height":800,"src":"/image-h.png","srcSet":"/image-h.png 1x"}},"publicURL":"/image-h.png"}}
       maskColor="rgba(0,0,0,0.3)"
       subtitle="A subtitle belonging to the Headline. Such item can contain lenghty text."
       title="A title of the Headline"
@@ -128,20 +110,11 @@ export const onHeadlineUpdate = (payload) => {
       align="center"
       fullSize={true}
       color="white"
-      backgImage={{
-        name: "sample.jpg",
-        fixed: {
-          base64: "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAeABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBBAUG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAED/9oADAMBAAIQAxAAAAHchBWFDm2zhnfKIf/EABoQAAIDAQEAAAAAAAAAAAAAAAABAgQREAP/2gAIAQEAAQUC7pporEkl7yQ7DZvf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFRABAQAAAAAAAAAAAAAAAAAAIDH/2gAIAQEABj8CdP8A/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERIDFxgf/aAAgBAQABPyHISlrEztejK1mw3GdP/9oADAMBAAIAAwAAABBrJoL/xAAXEQADAQAAAAAAAAAAAAAAAAAAEBEh/9oACAEDAQE/EKU1f//EABYRAAMAAAAAAAAAAAAAAAAAAAAQIf/aAAgBAgEBPxBw/8QAHRABAAICAgMAAAAAAAAAAAAAAQARIVEQMUFhcf/aAAgBAQABPxDEa4puV2SuyXu7mlyxAT17EwhfGCEUairWGdhbNeCf/9k=",
-          height: 900,
-          src: "sample.jpg",
-          srcSet: "sample.jpg 1x,sample.jpg 1.5x,sample.jpg 2x",
-          width: 1400
-        },
-      }}
-      maskColor="rgba(0,0,0,0.3)"
+      backgImage={{"name":"image-h.png","base":"image-h.png","childImageSharp":{"resize":{"originalName":"image-h.png","src":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/5c63f/image-h.png"},"fluid":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","aspectRatio":1.775,"src":"/image-h.png","srcSet":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/4a076/image-h.png 355w,\n/static/750dc0c9885bfd9d4f95b95e9d134d4c/62657/image-h.png 710w,\n/image-h.png 1420w,\n/image-h.png 1920w","sizes":"(max-width: 1420px) 100vw, 1420px"},"fixed":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","width":1420,"height":800,"src":"/image-h.png","srcSet":"/image-h.png 1x"}},"publicURL":"/image-h.png"}}
+      maskColor="rgba(255,255,255,0.5)"
       subtitle="A subtitle belonging to the Headline. Such item can contain lenghty text."
       text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-      textColor="white"
+      textColor="#000000"
       title="A title of the Headline"
       updateSelf={(payload) => console.log("updateSelf(): ", payload)}
     />
@@ -153,24 +126,15 @@ export const onHeadlineUpdate = (payload) => {
     <State store={headlineStore}>
       {state => 
         <Headline
-        backgImage={{
-          name: "sample.jpg",
-          fixed: {
-            base64: "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAeABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAIBBAUG/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAED/9oADAMBAAIQAxAAAAHchBWFDm2zhnfKIf/EABoQAAIDAQEAAAAAAAAAAAAAAAABAgQREAP/2gAIAQEAAQUC7pporEkl7yQ7DZvf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAFRABAQAAAAAAAAAAAAAAAAAAIDH/2gAIAQEABj8CdP8A/8QAGhAAAwADAQAAAAAAAAAAAAAAAAERIDFxgf/aAAgBAQABPyHISlrEztejK1mw3GdP/9oADAMBAAIAAwAAABBrJoL/xAAXEQADAQAAAAAAAAAAAAAAAAAAEBEh/9oACAEDAQE/EKU1f//EABYRAAMAAAAAAAAAAAAAAAAAAAAQIf/aAAgBAgEBPxBw/8QAHRABAAICAgMAAAAAAAAAAAAAAQARIVEQMUFhcf/aAAgBAQABPxDEa4puV2SuyXu7mlyxAT17EwhfGCEUairWGdhbNeCf/9k=",
-            height: 900,
-            src: "sample.jpg",
-            srcSet: "sample.jpg 1x,sample.jpg 1.5x,sample.jpg 2x",
-            width: 1400
-          },
-        }}
-        isEditable
-        maskColor="rgba(0,0,0,0.5)"
-        onElementUpdate={onHeadlineUpdate}
-        subtitle={state.subtitle}
-        text={state.text}
-        textColor="#ffffff"
-        title={state.title}
-      />
+          backgImage={{"name":"image-h.png","base":"image-h.png","childImageSharp":{"resize":{"originalName":"image-h.png","src":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/5c63f/image-h.png"},"fluid":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","aspectRatio":1.775,"src":"/image-h.png","srcSet":"/static/750dc0c9885bfd9d4f95b95e9d134d4c/4a076/image-h.png 355w,\n/static/750dc0c9885bfd9d4f95b95e9d134d4c/62657/image-h.png 710w,\n/image-h.png 1420w,\n/image-h.png 1920w","sizes":"(max-width: 1420px) 100vw, 1420px"},"fixed":{"base64":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAAsSAAALEgHS3X78AAACS0lEQVQoz1WSS0wTURSGb+LOBQs3LjAhUQRW7txoMNGFkRhMWzuFFizYGohNWypW2tIH6kYTFyZdaNgaN6QVETqdTh/adqYvJGAkYt+NSHunM1N0494zUyQx+XNzF/c75//PPagUVBYDyh/rahzWtCgtpvWtiK4FdxCpxvQdLn6Pixm56PTXLLm5ubtV+Jz6lKRIuv9cP6quqoAvBZQHIeKIOSIJLjEjsAs8Y+dTD4Sk6SDl3cmn8vkv29t7GYYdGhpAW29G91YUpaACqjTJY1LNxQxifknMecXMophxCqxDSNu4tKPO+BvZ5e/k/Jne0+iZ9VLYPwI8mG+s3cbUWJcXWKdYeCrxknxi1iNk3SLr6DBzh4ylFZ99aR9GL2yXk8uj31ZUxYCi3oVJAtOTYs4nY49BHVABtNTJ+YScV8h6xOziH9aAzvb26G+e33l7q7aq2t8gZFiNo1NCxiVCq5wH2vI5H2a9Tcbbzvg6UjnJTjNqRD0nTyCE3Hcv/E7o/s2MwJEJPmXjmYcwMIF1NeKPajHQQiPhbKY9Mv8EvgBprg8O9J1SXe3jaUhLyJIy45ix/fE+n7Q0E9ZK2Fyn5+rR+XrMXova2xkvDBJHdMi/eGPkyuBz88VfCW2THIe0rYhW5sda1AT436cM5Q+GKjlbDZtqEUuFsuK0i0+aIR167b72yjkMc27TWnjKxabhPP5t2JyfIU3xHVF+ryuv6SsbhkpoBidMmBoHjwhTmsO4lovIfejJrv7blrBG2qKgqiSXqKxPwSJ20/0FXuyl+fUAN8QAAAAASUVORK5CYII=","width":1420,"height":800,"src":"/image-h.png","srcSet":"/image-h.png 1x"}},"publicURL":"/image-h.png"}}
+          isEditable
+          maskColor="rgba(255,255,255,0.5)"
+          onElementUpdate={onHeadlineUpdate}
+          subtitle={state.subtitle}
+          text={state.text}
+          textColor="#000000"
+          title={state.title}
+        />
       }
     </State>
   </Story>

@@ -131,6 +131,7 @@ export default function Headline({
   };
 
   // console.group('Headline.js');
+  // console.log({ backgImage });
   // console.groupEnd();
 
   return (
