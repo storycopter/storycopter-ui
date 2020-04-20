@@ -30,36 +30,34 @@ export default function Gallery({ fullSize, images, maskColor, textColor }) {
   // console.groupEnd();
 
   return (
-    <div className={classes.galleryRoot}>
-      <Slider {...sliderSettings} ref={sliderRef} beforeChange={(oNo, nNo) => setSlideNo(nNo)}>
-        {images.length > 1 ? (
-          sortBy(images, [o => o.order]).map((image, i) => {
-            const settings = {
-              fullSize,
-              image: {
-                ...image,
-                order: i + 1,
-              },
-              maskColor,
-              textColor,
-            };
-            return (
-              <Image
-                count={images.length}
-                key={image.order}
-                onCallNext={() => sliderRef.current.slickNext()}
-                onCallPrev={() => sliderRef.current.slickPrev()}
-                settings={settings}
-                slideNo={slideNo}
-                sliderRef={sliderRef}
-              />
-            );
-          })
-        ) : (
-          <Image {...images[0]} settings={{ image: images[0], fullSize, maskColor, textColor }} />
-        )}
-      </Slider>
-    </div>
+    <Slider {...sliderSettings} ref={sliderRef} beforeChange={(oNo, nNo) => setSlideNo(nNo)}>
+      {images.length > 1 ? (
+        sortBy(images, [o => o.order]).map((image, i) => {
+          const settings = {
+            fullSize,
+            image: {
+              ...image,
+              order: i + 1,
+            },
+            maskColor,
+            textColor,
+          };
+          return (
+            <Image
+              count={images.length}
+              key={image.order}
+              onCallNext={() => sliderRef.current.slickNext()}
+              onCallPrev={() => sliderRef.current.slickPrev()}
+              settings={settings}
+              slideNo={slideNo}
+              sliderRef={sliderRef}
+            />
+          );
+        })
+      ) : (
+        <Image {...images[0]} settings={{ image: images[0], fullSize, maskColor, textColor }} />
+      )}
+    </Slider>
   );
 }
 

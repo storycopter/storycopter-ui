@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
@@ -20,9 +19,9 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
       flexDirection: 'column',
       justifyContent: 'center',
       minHeight: fullSize ? '100vh' : 'auto',
+      position: 'relative',
       paddingBottom: theme.spacing(5),
       paddingTop: theme.spacing(5),
-      position: 'relative',
       [theme.breakpoints.up('md')]: {
         paddingTop: theme.spacing(10),
         paddingBottom: theme.spacing(10),
@@ -132,13 +131,12 @@ export default function Headline({
   };
 
   // console.group('Headline.js');
-  // console.log({ backgImage });
   // console.groupEnd();
 
   return (
-    <Box className={classes.headlineRoot} style={style}>
+    <div className={classes.headlineRoot} style={style}>
       <Container className={classes.headlineContainer} maxWidth="xl">
-        <Box className={classes.headlineContent}>
+        <div className={classes.headlineContent}>
           {isEditable || props.title ? (
             <Typography className={classes.headlineTitle} component="div" variant="h1" style={{ color: textColor }}>
               {isEditable ? (
@@ -202,10 +200,10 @@ export default function Headline({
               )}
             </Typography>
           ) : null}
-          {children ? <Box className={classes.headlineActionbar}>{children}</Box> : null}
-        </Box>
+          {children ? <div className={classes.headlineActionbar}>{children}</div> : null}
+        </div>
       </Container>
-    </Box>
+    </div>
   );
 }
 
