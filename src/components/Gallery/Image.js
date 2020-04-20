@@ -136,6 +136,7 @@ export default function Image({
                 height: fullSize ? `${dimensions?.h - SLIDER_PADDING * 2}px` : 'auto',
                 width: fullSize ? `${dimensions?.w - SLIDER_PADDING * 2}px` : 'auto',
               }}
+              src=""
             />
           </div>
           <figcaption className={classes.imageCaption}>
