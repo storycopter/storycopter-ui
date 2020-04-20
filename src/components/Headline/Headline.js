@@ -18,10 +18,10 @@ const useStyles = (align, backgColor, backgImage, fullSize, maskColor, textColor
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      minHeight: fullSize ? '100vh' : 'auto',
-      position: 'relative',
+      minHeight: fullSize ? '100vh' : '50vh',
       paddingBottom: theme.spacing(5),
       paddingTop: theme.spacing(5),
+      position: 'relative',
       [theme.breakpoints.up('md')]: {
         paddingTop: theme.spacing(10),
         paddingBottom: theme.spacing(10),

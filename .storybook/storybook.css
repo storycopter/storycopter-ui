@@ -1,3 +1,7 @@
-.sb-show-main {
+/* .sb-show-main {
   background-color: transparent;
+} */
+
+.sb-show-main {
+  padding: 0 !important;
 }

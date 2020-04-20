@@ -1,7 +1,7 @@
 import Headline from './Headline/Headline';
-import Gallery from './Gallery/Gallery';
+import Slideshow from './Slideshow/Slideshow';
 
 export default {
   headline: Headline,
-  gallery: Gallery,
+  slideshow: Slideshow,
 };
