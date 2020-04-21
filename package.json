@@ -59,6 +59,7 @@
     "build": "webpack -p --config ./webpack.config.js",
     "build:dev": "nodemon --watch src --exec yarn build",
     "clean-lib": "rm -rf ./lib",
+    "clean": "npx rimraf **/node_modules/",
     "build-storybook": "build-storybook -o ./public -s ./static",
     "deploy": "build-storybook -o ./public -s ./static && netlify deploy --dir=public --prod",
     "start": "start-storybook -p 8080 -s ./static --ci",
