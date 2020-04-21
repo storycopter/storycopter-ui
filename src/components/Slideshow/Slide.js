@@ -103,7 +103,7 @@ export default function Slide({
   onCallNext,
   onCallPrev,
   sliderRef,
-  settings: { fullSize = null, image = null, maskColor = null, textColor = null },
+  settings: { backgColor = null, fullSize = null, image = null, maskColor = null, textColor = null },
   ...props
 }) {
   const slideClasses = useStyles(image, textColor)();
@@ -141,6 +141,7 @@ export default function Slide({
 
   console.group('Slide');
   console.log(props);
+  console.log(backgColor);
   console.groupEnd();
 
   return (
@@ -149,6 +150,7 @@ export default function Slide({
         className={slideClasses.root}
         style={{
           ...props.style,
+          backgroundColor: backgColor || 'transparent',
           backgroundImage: image.backgImageEnabled ? `url("${image.publicURL}")` : 'none',
           minHeight: fullSize ? canvasHeight || '100vh' : '50vh',
         }}>

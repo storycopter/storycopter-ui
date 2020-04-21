@@ -5,7 +5,7 @@ import sortBy from 'lodash/sortBy';
 
 import Slide from './Slide';
 
-export default function Slideshow({ fullSize = false, images, maskColor, textColor, style = null, ...props }) {
+export default function Slideshow({ backgColor, fullSize, images, maskColor, style, textColor, ...props }) {
   const sliderRef = useRef();
 
   const sliderSettings = {
@@ -18,7 +18,7 @@ export default function Slideshow({ fullSize = false, images, maskColor, textCol
   };
 
   console.group('Slideshow.js');
-  console.log({ images });
+  console.log({ backgColor });
   // console.log(images.length);
   console.groupEnd();
 
@@ -26,6 +26,7 @@ export default function Slideshow({ fullSize = false, images, maskColor, textCol
     <Slider {...sliderSettings} ref={sliderRef} style={style}>
       {sortBy(images, [o => o.order]).map((image, i) => {
         const settings = {
+          backgColor,
           fullSize,
           image: {
             ...image,
