@@ -70,13 +70,14 @@ export default function Slide({
 }) {
   const classes = useStyles(maskColor, textColor)();
 
-  const { fluid } = image.childImageSharp;
-  const { aspectRatio } = fluid;
-
   const [winDimensions, setWinDimensions] = useState(null);
   const [objDimensions, setObjDimensions] = useState(null);
 
   const getDimensions = () => {
+    if (!window || !image?.childImageSharp) return null;
+
+    const { aspectRatio } = image?.childImageSharp?.fluid;
+
     const wh = window.innerHeight;
     const ww = window.innerWidth;
 
@@ -96,12 +97,12 @@ export default function Slide({
   }, []);
 
   useEffect(() => {
-    window.addEventListener('resize', getDimensions);
-    return () => window.removeEventListener('resize', getDimensions);
+    window?.addEventListener('resize', getDimensions);
+    return () => window?.removeEventListener('resize', getDimensions);
   });
 
   return (
-    <BackgroundImage fluid={fluid} className={classes.slideRoot} {...props}>
+    <BackgroundImage fluid={image?.childImageSharp?.fluid} className={classes.slideRoot} {...props}>
       <figure
         className={classes.slideFigure}
         style={{
@@ -111,7 +112,7 @@ export default function Slide({
         }}>
         <div className={classes.slideObj}>
           <Img
-            fluid={fluid}
+            fluid={image?.childImageSharp?.fluid}
             style={{
               height: objDimensions?.oh,
               width: objDimensions?.ow,

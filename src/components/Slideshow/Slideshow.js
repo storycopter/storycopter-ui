@@ -24,10 +24,10 @@ export default function Slideshow({ fullSize, images, maskColor, textColor }) {
     variableWidth: false,
   };
 
-  // console.group('Slideshow.js');
-  // console.log({ images });
+  console.group('Slideshow.js');
+  console.log({ images });
   // console.log(images.length);
-  // console.groupEnd();
+  console.groupEnd();
 
   return (
     <Slider {...sliderSettings} ref={sliderRef} beforeChange={(oNo, nNo) => setSlideNo(nNo)}>
