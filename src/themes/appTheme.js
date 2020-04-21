@@ -2,8 +2,6 @@ import { createMuiTheme } from '@material-ui/core/styles';
 
 import colors from './settings/colors';
 
-console.log({ colors });
-
 const muiTheme = createMuiTheme();
 
 // console.group('appTheme.js');
@@ -97,6 +95,9 @@ export default createMuiTheme({
     },
     MuiExpansionPanelSummary: {
       root: {
+        padding: '0',
+        marginLeft: `${muiTheme.spacing(3)}px`,
+        marginRight: `${muiTheme.spacing(3)}px`,
         '&$expanded': {
           borderBottom: `1px solid ${muiTheme.palette.divider}`,
           marginLeft: `${muiTheme.spacing(3)}px`,
@@ -109,16 +110,16 @@ export default createMuiTheme({
         },
       },
       content: {
-        margin: '12px 0',
+        margin: '0 0',
         '&$expanded': {
-          margin: '12px 0',
+          margin: '0 0',
         },
       },
     },
 
     MuiExpansionPanelDetails: {
       root: {
-        padding: `${muiTheme.spacing(2)}px ${muiTheme.spacing(3)}px ${muiTheme.spacing(2)}px`,
+        padding: `${muiTheme.spacing(2)}px ${muiTheme.spacing(3)}px`,
       },
     },
   },

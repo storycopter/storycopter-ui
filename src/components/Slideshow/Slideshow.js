@@ -1,19 +1,12 @@
 import './react-slick.css';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import sortBy from 'lodash/sortBy';
 
-import makeStyles from '@material-ui/core/styles/makeStyles';
-
 import Slide from './Slide';
 
-const useStyles = fullSize => makeStyles(theme => ({}));
-
-export default function Slideshow({ fullSize, images, maskColor, textColor }) {
-  const classes = useStyles(fullSize)();
+export default function Slideshow({ fullSize = false, images, maskColor, textColor, style = null, ...props }) {
   const sliderRef = useRef();
-
-  const [slideNo, setSlideNo] = useState(null);
 
   const sliderSettings = {
     adaptiveHeight: false,
@@ -30,7 +23,7 @@ export default function Slideshow({ fullSize, images, maskColor, textColor }) {
   console.groupEnd();
 
   return (
-    <Slider {...sliderSettings} ref={sliderRef} beforeChange={(oNo, nNo) => setSlideNo(nNo)}>
+    <Slider {...sliderSettings} ref={sliderRef} style={style}>
       {sortBy(images, [o => o.order]).map((image, i) => {
         const settings = {
           fullSize,
@@ -43,12 +36,12 @@ export default function Slideshow({ fullSize, images, maskColor, textColor }) {
         };
         return (
           <Slide
+            canvasHeight={props.canvasHeight}
             count={images.length}
             key={image.order}
             onCallNext={() => sliderRef.current.slickNext()}
             onCallPrev={() => sliderRef.current.slickPrev()}
             settings={settings}
-            slideNo={slideNo}
             sliderRef={sliderRef}
           />
         );
