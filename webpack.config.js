@@ -7,8 +7,11 @@ module.exports = {
     path: path.resolve(__dirname, 'lib'),
     filename: 'index.js',
     library: '',
-    libraryTarget: 'commonjs'
+    libraryTarget: 'commonjs',
   },
+  // optimization: {
+  //   minimize: false,
+  // },
   module: {
     rules: [
       {
@@ -17,14 +20,14 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
+      // {
+      //   test: /\.css$/i,
+      //   use: ['style-loader', 'css-loader'],
+      // },
     ],
   },
   externals: [
@@ -33,14 +36,14 @@ module.exports = {
         root: 'React',
         commonjs2: 'react',
         commonjs: 'react',
-        amd: 'react'
+        amd: 'react',
       },
       'react-dom': {
         root: 'ReactDOM',
         commonjs2: 'react-dom',
         commonjs: 'react-dom',
-        amd: 'react-dom'
-      }
-    }
-  ]
+        amd: 'react-dom',
+      },
+    },
+  ],
 };

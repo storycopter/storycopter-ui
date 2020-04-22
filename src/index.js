@@ -1,6 +1,6 @@
-import appTheme from './themes/appTheme';
-import docTheme from './themes/docTheme';
-import Baseline from './themes/styles/Baseline';
+// import appTheme from './themes/appTheme';
+// import docTheme from './themes/docTheme';
 
 export * from './components';
-export { appTheme, docTheme, Baseline };
+export * from './themes';
+// export { appTheme };

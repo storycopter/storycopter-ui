@@ -1,3 +1,7 @@
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+
+const Styles = createGlobalStyle`
   .slick-list,
   .slick-slider,
   .slick-track {
@@ -232,3 +236,8 @@
     opacity: 0.75;
     color: #000;
   }
+`;
+
+export default function SlideshowStyles() {
+  return <Styles />;
+}

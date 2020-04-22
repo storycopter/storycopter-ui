@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 import { breakpoint } from '../../settings';
 import { setSpace } from '../../mixins';
