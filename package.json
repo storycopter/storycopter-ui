@@ -48,7 +48,6 @@
     "prettier-eslint": "9.0.1",
     "prettier-stylelint": "0.4.2",
     "pretty-quick": "2.0.1",
-    "release-it": "13.5.5",
     "storybook-dark-mode": "0.4.1",
     "style-loader": "^1.1.4",
     "stylelint-config-prettier": "8.0.1",
@@ -63,7 +62,6 @@
     "clean": "npx rimraf **/node_modules/",
     "build-storybook": "build-storybook -o ./public -s ./static",
     "deploy": "build-storybook -o ./public -s ./static && netlify deploy --dir=public --prod",
-    "start": "start-storybook -p 8080 -s ./static --ci",
-    "release": "yarn build && yarn run release-it --access public --ci"
+    "start": "start-storybook -p 8080 -s ./static --ci"
   }
 }
