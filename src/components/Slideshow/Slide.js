@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 
-const MIN_HEIGHT = 350;
+const MIN_HEIGHT = 300;
 
 const useStyles = (image, textColor) =>
   makeStyles(theme => ({
@@ -80,7 +80,6 @@ const useStyles = (image, textColor) =>
       flex: '0 1 auto',
       flexDirection: 'column',
       justifyContent: 'flex-end',
-      marginTop: theme.spacing(3),
       position: 'relative',
       textAlign: 'center',
       zIndex: 50,
