@@ -1,6 +1,6 @@
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -138,10 +138,10 @@ export default function Slide({
     return () => window?.removeEventListener('resize', getDimensions);
   });
 
-  console.group('Slide');
-  console.log(props);
-  console.log(backgColor);
-  console.groupEnd();
+  // console.group('Slide');
+  // console.log(props);
+  // console.log(backgColor);
+  // console.groupEnd();
 
   return (
     <div {...props}>
