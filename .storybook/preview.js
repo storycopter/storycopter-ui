@@ -4,13 +4,11 @@ import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { addDecorator, addParameters } from '@storybook/react';
 import { configureActions } from '@storybook/addon-actions';
 
-import './storybook.css';
-
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 
+import './storybook.css';
+import Baseline from '../src/themes/Baseline';
 import docTheme from '../src/themes/docTheme';
-
-import Baseline from '../src/themes/styles/Baseline';
 
 addParameters({
   options: {
@@ -31,8 +29,8 @@ configureActions({
 });
 
 addDecorator(story => (
-  <ThemeProvider theme={docTheme}>
+  <>
     <Baseline />
-    {story()}
-  </ThemeProvider>
+    <ThemeProvider theme={docTheme}>{story()}</ThemeProvider>
+  </>
 ));

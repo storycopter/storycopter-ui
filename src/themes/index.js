@@ -1,3 +1,3 @@
-export { default as colors } from './settings/colors';
-export { default as setSpace } from './mixins/setSpace';
-export { default as setType } from './mixins/setType';
+export { default as Baseline } from './Baseline';
+export { default as appTheme } from './appTheme';
+export { default as docTheme } from './docTheme';
